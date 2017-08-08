@@ -9,46 +9,46 @@
     private $sectorestado;
 
     function Sector($sectorId,$sectornombre,$sectorcapacidadPerson,$sectorcantidadMesa,$sectorestado){
-      $this->$sectorId=$sectorId;
-      $this->$sectornombre=$sectornombre;
-      $this->$sectorcapacidadPerson=$sectorcapacidadPerson;
-      $this->$sectorcantidadMesa=$sectorcantidadMesa;
-      $this->$sectorestado=$sectorestado;
+      $this->sectorId=$sectorId;
+      $this->sectornombre=$sectornombre;
+      $this->sectorcapacidadPerson=$sectorcapacidadPerson;
+      $this->sectorcantidadMesa=$sectorcantidadMesa;
+      $this->sectorestado=$sectorestado;
     }
 
     function setSectorId($sectorId){
-      $this->$sectorId=$sectorId;
+      $this->sectorId=$sectorId;
     }
     function getSectorId(){
-      return $this->$sectorId;
+      return $this->sectorId;
     }
 
     function setSectorNombre($sectornombre){
-      $this->$sectornombre=$sectornombre;
+      $this->sectornombre=$sectornombre;
     }
     function getSectorNombre(){
-      return $this->$sectornombre;
+      return $this->sectornombre;
     }
 
     function setSectorCapacidadPersona($sectorcapacidadPerson){
-      $this->$sectorcapacidadPerson=$sectorcapacidadPerson;
+      $this->sectorcapacidadPerson=$sectorcapacidadPerson;
     }
     function getSectorCapacidadPersona(){
-      return $this->$sectorcapacidadPerson;
+      return $this->sectorcapacidadPerson;
     }
 
     function setSectorCantidadMesa($sectorcantidadMesa){
-      $this->$sectorcantidadMesa=$sectorcantidadMesa;
+      $this->sectorcantidadMesa=$sectorcantidadMesa;
     }
     function getSectorCantidadMesa(){
-      return $this->$sectorcantidadMesa;
+      return $this->sectorcantidadMesa;
     }
 
     function setSectorEstado($sectorestado){
-      $this->$sectorestado=$sectorestado;
+      $this->sectorestado=$sectorestado;
     }
     function getSectorEstado(){
-      return $sectorestado;
+      return $this->sectorestado;
     }
 
 

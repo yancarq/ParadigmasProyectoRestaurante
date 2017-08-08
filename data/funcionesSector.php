@@ -1,17 +1,22 @@
 <?php
-	class funcionesSector{
-		require_once("Conexion.php");
-		$conexion = new Conexion();
+	include "Conexion.php";
+	include "../domain/Sector.php";
 
-		function eliminarSector($sectorId){
+	class funcionesSector {
 
+
+
+
+		public function eliminarSector($sectorId){
+			$conexion = new Conexion();
 			$eliminar = $this->$conexion->crearConexion()->query("DELETE FROM tbsector WHERE sectorid='$sectorId';");
-	        
+
 	        if($eliminar != 1)
 	          	throw new Exception("Error al eliminar el sector");
 		}
 
-		function mostrarSector($sectorId){
+		public function mostrarSector($sectorId){
+			$conexion = new Conexion();
 			$query = $conexion->crearConexion()->query("SELECT * FROM tbsector WHERE tbsector.sectorid='$sectorId'");
 
 			$devolver[] = array();
@@ -27,7 +32,8 @@
 			return $devolver;
 		}
 
-		function modificarSector($sector){
+		public function modificarSector($sector){
+			$conexion = new Conexion();
 			$secorId= $sector->getSectorId();
 	        $sectorNombre= $sector->getSectorNombre();
 	        $sectorCapacidadPersonas= $sector->getSectorCapacidadPersonas();
@@ -35,22 +41,28 @@
 	        $sectorEstado= $sector->getSectorEstado();
 
 	       	$modificar = $this->$conexion->crearConexion()->query("UPDATE tbsector SET sectornombre='$sectorNombre', sectorcapacidadpersonas='$sectorCapacidadPersonas', sectorcapacidadmesas='$sectorCapacidadMesas', sectorestado='$sectorEstado' WHERE sectorid='$secorId';");
-	        
+
 	        if($modificar != 1)
 	          	throw new Exception("Error al modificar el sector");
 		}
 
-		function insertarSector($sector){
-	        $secorId= $sector->getSectorId();
+		public function insertarSector($sector){
+			$conexion = new Conexion();
+	        $sectorId= $sector->getSectorId();
 	        $sectorNombre= $sector->getSectorNombre();
-	        $sectorCapacidadPersonas= $sector->getSectorCapacidadPersonas();
-	        $sectorCapacidadMesas= $sector->getSectorCapacidadMesas();
+	        $sectorCapacidadPersonas= $sector->getSectorCapacidadPersona();
+	        $sectorCapacidadMesas= $sector->getSectorCantidadMesa();
 	        $sectorEstado= $sector->getSectorEstado();
-	            
-	       	$insertar = $this->$conexion->crearConexion()->query("INSERT INTO tbsector (sectorid, sectornombre, sectorcapacidadpersonas, sectorcapacidadmesas, sectorestado) values ('$secorId','$sectorNombre','$sectorCapacidadPersonas','$sectorCapacidadMesas', '$sectorEstado');");
-	        if($insertar != 1)
-	          	throw new Exception("Error al insertar el sector");
-	      
-	    }
+
+	       	$consulta ="INSERT INTO tbsector (sectorid, sectornombre, sectorcapacidadpersonas, sectorcapacidadmesas, sectorestado) VALUES ('$sectorId', '$sectorNombre', '$sectorCapacidadPersonas', '$sectorCapacidadMesas', '$sectorEstado')";
+	     
+			if(!$conexion->crearConexion()->query($consulta)){
+				
+					echo "Error al Registrar";
+			}else{
+				echo "Registro exitoso!!!";
+			}
+			$conexion->cerrarConexion();
+	    }	
     }
 ?>

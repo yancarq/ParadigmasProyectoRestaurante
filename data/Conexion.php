@@ -5,20 +5,28 @@
 		private $server;
 		private $db;
 		private $link;
-		function __construct(){
-			$this->user="root@localhost";
-			$this->pass="admin";
-			$this->server="localhost";
-			$this->db="dbproyectorestaurante";			
+
+		public function  __construct(){
+
+			$this->user="root";
+			$this->pass="";
+			$this->server="127.0.0.1";
+			$this->db="dbproyectorestaurante";
 		}
 
-		function crearConexion(){
-			$this->link =mysqli_connect($this->server,$this->user,$this->pass,$this->db);			
-			return $this->link;		
+		public function crearConexion(){
+			$this->link = new mysqli($this->server,$this->user,$this->pass,$this->db);
+			if ($this->link->connect_error) {
+    			die("ERROR AL CONECTAR CON LA BASE DATOS<br>");
+			} else{
+				echo ("CONECTO CON LA BASE DATOS<br>");
+				return $this->link;
+			}
+			
 		}
-		function cerrarConexion(){
+		public function cerrarConexion(){
 			mysqli_close ($this->link);
 		}
-		
+
 	}
 ?>
