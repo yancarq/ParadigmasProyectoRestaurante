@@ -2,7 +2,7 @@
 	include "Conexion.php";
 	include "../domain/Especias.php";
 
-  class dataCarnes {
+  class dataEspecias {
 
   	   public function eliminarEspecia($especiaId){
   					$conexion = new Conexion();
@@ -43,7 +43,7 @@
   	          	throw new Exception("Error al modificar el especia");
   		}
 
-  		public function insertarEspecias($ensalada){
+  		public function insertarEspecias($especia){
   				  $conexion = new Conexion();
 						$especiaDescripcion= $especia->getEspeciaDescripcion();
   	        $especiaNombre= $especia->getEspeciaNombre();

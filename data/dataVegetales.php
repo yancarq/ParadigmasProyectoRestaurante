@@ -43,7 +43,7 @@
   	          	throw new Exception("Error al modificar el vegetal");
   		}
 
-  		public function insertarSector($empleado){
+  		public function insertarSector($vegetal){
   				  $conexion = new Conexion();
 						$vegetalDescripcion= $vegetal->getVegetalDescripcion();
 						$vegetalNombre= $vegetal->getVegetalNombre();

@@ -42,7 +42,7 @@
   	          	throw new Exception("Error al modificar el empleado");
   		}
 
-  		public function insertarSector($empleado){
+  		public function insertarEmpleado($empleado){
   				  $conexion = new Conexion();
             $empleadoId= $empleado->getEmpleadoId();
             $empleadoNombre= $empleado->getEmpleadoNombre();

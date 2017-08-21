@@ -43,7 +43,7 @@
   	          	throw new Exception("Error al modificar el ensalada");
   		}
 
-  		public function insertarSector($ensalada){
+  		public function insertarEnsalada($ensalada){
   				  $conexion = new Conexion();
 						$ensaladaDescripcion= $ensalada->getEnsaladaDescripcion();
 						$ensaladaNombre= $ensalada->getEnsaladaNombre();

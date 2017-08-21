@@ -43,7 +43,7 @@
   	          	throw new Exception("Error al modificar el carne");
   		}
 
-  		public function insertarSector($ensalada){
+  		public function insertarCarne($carne){
   				  $conexion = new Conexion();
 						$carneDescripcion= $carne->getCarneDescripcion();
   	        $carneNombre= $carne->getCarneNombre();
