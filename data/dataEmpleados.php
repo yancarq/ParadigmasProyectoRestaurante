@@ -1,8 +1,8 @@
 <?php
-	include "Conexion.php";
+	include "conexion.php";
 	include "../domain/Empleados.php";
 
-  class dataEmpleado {
+  class DataEmpleado{
 
   	   public function eliminarEmpleado($empleadoId){
   					$conexion = new Conexion();

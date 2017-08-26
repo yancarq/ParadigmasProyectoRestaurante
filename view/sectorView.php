@@ -26,7 +26,7 @@
       </select>
       <br />
       <input type="submit" value="Ingresar" name="ingresar" id="ingresar">
-      <input type="button" value="Cancelar" onclick="#">
+      <input type="reset" value="Cancelar" onclick="#">
      </form>
 
 
