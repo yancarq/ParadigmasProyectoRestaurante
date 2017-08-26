@@ -1,23 +1,22 @@
 <?php
 	class Empleado{
-		private $empleadoId;
+		private $empleadoUsuario;
 		private $empleadocontrasenia;
 		private $empleadoNombre;
 		
-		function Empleado($empleadoId,$empleadocontrasenia,$empleadoNombre){
-			$this->empleadoId=$empleadoId;
+		function Empleado($empleadoUsuario,$empleadocontrasenia,$empleadoNombre){
+			$this->empleadoUsuario=$empleadoUsuario;
 			$this->empleadocontrasenia=$empleadocontrasenial;
 			$this->empleadoNombre=$empleadoNombre;
 		}
-		function setEmpleadoId($id)
+		function setEmpleadoUSuario($usuario)
 		{
-			$this->empleadoId=$id;	
+			$this->empleadoUsuario=$usuario;	
 			
 		}
-		function getEmpleadoId(){
-			return $this->empleadoId;	
+		function getEmpleadoUsuario(){
+			return $this->empleadoNombre;	
 		}
-		
 		function setEmpleadoContrasenia($contrasenia){
 			$this->empleadocontrasenia=$contrasenia;
 		}
@@ -28,10 +27,6 @@
 		function setEmpleadoNombre($nombre){
 			$this->empleadoNombre=$nombre;	
 		}
-		function getEmpleadoNombre(){
-			$this->empleadoNombre;	
-		}
-
 		
 	}
 
